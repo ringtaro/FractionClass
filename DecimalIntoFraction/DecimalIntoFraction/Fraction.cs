@@ -8,10 +8,10 @@ namespace DecimalIntoFraction
 {
     public class Fraction
     {
-        int numerator;
-        int denominator;
+        ulong numerator;
+        ulong denominator;
 
-        public Fraction(int numerator, int denominator)
+        public Fraction(ulong numerator, ulong denominator)
         {
             this.numerator = numerator;
             this.denominator = denominator;
@@ -19,20 +19,21 @@ namespace DecimalIntoFraction
 
         public static Fraction FromDecimal(decimal input_num)
         {
-            Stack<int> astack = GetContinuedFraction(input_num);
+            Stack<ulong> astack = GetContinuedFraction(input_num);
             return FromContinuedFraction(astack);
         }
 
-        private static Fraction FromContinuedFraction(Stack<int> astack)
+        private static Fraction FromContinuedFraction(Stack<ulong> astack)
         {
-            int rn = astack.Pop();
-            int rm = 1;
+            ulong rn = astack.Pop();
+            ulong rm = 1;
             while (astack.Count > 0)
             {
-                int fa = astack.Pop() * rn + rm;
+                ulong fa = astack.Pop() * rn + rm;
                 rm = rn;
                 rn = fa;
             }
+            Debug.Print(string.Format("{0} / {1} = {2}", rn, rm, (double)rn / (double)rm));
             return new Fraction(rn, rm);
         }
 
@@ -43,15 +44,15 @@ namespace DecimalIntoFraction
 
         struct MixedNumber
         {
-            internal int Num;
+            internal ulong Num;
             internal decimal A;
             internal decimal B;
         }
 
-        private static Stack<int> GetContinuedFraction(decimal input_num)
+        private static Stack<ulong> GetContinuedFraction(decimal input_num)
         {
             Debug.Print(string.Format("{0}", input_num));
-            Stack<int> astack = new Stack<int>();
+            Stack<ulong> astack = new Stack<ulong>();
             MixedNumber mx = new MixedNumber();
             mx.A = input_num;
             mx.B = 1m;
@@ -67,7 +68,7 @@ namespace DecimalIntoFraction
         private static MixedNumber GetMixedNumber(decimal a, decimal b)
         {
             MixedNumber result = new MixedNumber();
-            int num = (int)Math.Floor(a / b);
+            ulong num = (ulong)Math.Floor(a / b);
             result.Num = num;
             result.A = b;
             result.B = a - b * num;
