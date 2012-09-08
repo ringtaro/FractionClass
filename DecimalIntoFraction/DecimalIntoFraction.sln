@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecimalIntoFraction", "DecimalIntoFraction\DecimalIntoFraction.csproj", "{B1425654-05E0-472D-8907-28B8F8A44029}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{A068E151-C4B7-4292-AE09-E88E1291EA71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{B1425654-05E0-472D-8907-28B8F8A44029}.Debug|x86.Build.0 = Debug|x86
 		{B1425654-05E0-472D-8907-28B8F8A44029}.Release|x86.ActiveCfg = Release|x86
 		{B1425654-05E0-472D-8907-28B8F8A44029}.Release|x86.Build.0 = Release|x86
+		{A068E151-C4B7-4292-AE09-E88E1291EA71}.Debug|x86.ActiveCfg = Debug|x86
+		{A068E151-C4B7-4292-AE09-E88E1291EA71}.Debug|x86.Build.0 = Debug|x86
+		{A068E151-C4B7-4292-AE09-E88E1291EA71}.Release|x86.ActiveCfg = Release|x86
+		{A068E151-C4B7-4292-AE09-E88E1291EA71}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

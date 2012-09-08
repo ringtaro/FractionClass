@@ -29,7 +29,8 @@ namespace DecimalIntoFraction
             ulong rm = 1;
             while (astack.Count > 0)
             {
-                ulong fa = astack.Pop() * rn + rm;
+                Debug.Print(string.Format("{0} / {1} = {2}", rn, rm, (double)rn / (double)rm));
+                ulong fa = checked(astack.Pop() * rn + rm);
                 rm = rn;
                 rn = fa;
             }
