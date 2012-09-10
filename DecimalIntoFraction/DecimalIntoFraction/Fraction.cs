@@ -27,14 +27,17 @@ namespace DecimalIntoFraction
         {
             ulong rn = astack.Pop();
             ulong rm = 1;
-            while (astack.Count > 0)
+            while (true)
             {
-                Debug.Print(string.Format("{0} / {1} = {2}", rn, rm, (double)rn / (double)rm));
+                Debug.Print(string.Format("{0} / {1}", rn, rm));
+                if (astack.Count == 0)
+                {
+                    break;
+                }
                 ulong fa = checked(astack.Pop() * rn + rm);
                 rm = rn;
                 rn = fa;
             }
-            Debug.Print(string.Format("{0} / {1} = {2}", rn, rm, (double)rn / (double)rm));
             return new Fraction(rn, rm);
         }
 
